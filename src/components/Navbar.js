@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { DownloadIcon, SearchIcon, LightningBoltIcon, UserIcon } from "@heroicons/react/solid";
+import React, { useState, } from "react";
+import { DownloadIcon, SearchIcon, LightningBoltIcon, } from "@heroicons/react/solid";
 import { Link } from "react-scroll";
 import SignInForm from "./SignInForm"; // Import your sign-in form component
 import ImageGallery from 'react-image-gallery';
