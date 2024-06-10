@@ -1,6 +1,4 @@
-// src/components/Projects.js
-
-import { CodeIcon, ExternalLinkIcon } from "@heroicons/react/solid"; // Add ExternalLinkIcon
+import { CodeIcon, ExternalLinkIcon } from "@heroicons/react/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
@@ -20,23 +18,23 @@ export default function Projects() {
             <FontAwesomeIcon icon={faGithub} className="inline-block w-6 h-6 mb-1 text-green-400" />, click on each project section!
           </p>
         </div>
-        <div className="flex flex-wrap -m-4">
+        <div className="flex flex-wrap -m-4 card-container">
+          
           {projects.map((project) => (
             <a
               href={project.link}
-              key={project.image}
-              className="sm:w-1/2 w-100 p-4"
+              key={project.title}
+              className="sm:w-1/2 w-full p-4"
               target="_blank"
               rel="noopener noreferrer"
-              
             >
               <div className="flex relative">
                 <img
                   alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="absolute inset-0 w-full h-full object-cover object-center transition duration-500 ease-in-out transform hover:scale-105 rounded-lg"
                   src={project.image}
                 />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100 rounded-lg">
                   <h2 className="tracking-widest text-sm title-font font-medium text-green-400 mb-1">
                     {project.subtitle}
                   </h2>
@@ -51,9 +49,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="text-green-400 hover:text-green-500"
                     >
-                      
                       <ExternalLinkIcon className="w-6 h-6" />
-                      
                     </a>
                   </div>
                 </div>

@@ -65,7 +65,7 @@ export const skills = [
   "React",
   "Bootstrap & tailwind css",
   "Node",
-  "HTML ",
+  "Authentication ",
   "Mongo DB",
-  "git","Testing",
+  "git","Deployment",
 ];
