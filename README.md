@@ -1,5 +1,6 @@
 Portfolio
-This is my personal portfolio website showcasing my projects, skills, and experience. The website is built using modern web technologies and provides an overview of my professional background.
+This is my personal portfolio website showcasing my projects, skills, and experience.
+The website is built using modern web technologies and provides an overview of my professional background.
 
 Features
 Home: Introduction and overview of my profile.
@@ -27,14 +28,10 @@ Copy code
 git clone https://github.com/your-username/portfolio.git
 cd portfolio
 Install the dependencies:
-
-bash
 Copy code
 npm install
 Running the Application
 Start the development server:
-
-bash
 Copy code
 npm start
 Open your browser and navigate to http://localhost:3000.
@@ -44,8 +41,8 @@ Navigate through the different sections using the navbar.
 Click on project links to view more details.
 Use the contact form to get in touch with me.
 Contributing
-Contributions are welcome! If you have suggestions for improvements, feel free to fork the repository and create a pull request.
+Contributions are welcome! If you have suggestions for improvements,
+feel free to fork the repository and create a pull request.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+
 
