@@ -25,7 +25,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/gebrie-dev/portfolio.git
 cd portfolio
 Install the dependencies:
 Copy code
