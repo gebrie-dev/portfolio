@@ -3,8 +3,8 @@ This is my personal portfolio website showcasing my projects, skills, and experi
 The website is built using modern web technologies and provides an overview of my professional background.
 
 ## Features
-**Home**: Introduction and overview of my profile.
-**About**: Detailed information about me.
+**Home**: Introduction and overview of my profile.<br>
+**About**: Detailed information about me.<br>
 **Projects**: Showcase of my projects with descriptions and links.
 **Skills**: A list of my technical skills.
 **Testimonials**: Feedback from colleagues and clients.
