@@ -1,8 +1,8 @@
-Portfolio
+# My Portfolio
 This is my personal portfolio website showcasing my projects, skills, and experience.
 The website is built using modern web technologies and provides an overview of my professional background.
 
-Features
+## Features
 Home: Introduction and overview of my profile.
 About: Detailed information about me.
 Projects: Showcase of my projects with descriptions and links.
@@ -11,7 +11,7 @@ Testimonials: Feedback from colleagues and clients.
 Contact: Form to get in touch with me.
 Sign In: Allows users to sign in for additional features.
 Resume: View and download my resume.
-Technologies Used
+## Technologies Used
 React: JavaScript library for building user interfaces.
 Tailwind CSS: Utility-first CSS framework for styling.
 Heroicons: Icons for the web.
@@ -20,13 +20,16 @@ React Scroll: Smooth scrolling functionality.
 Getting Started
 Prerequisites
 Node.js and npm installed on your machine.
-Installation
+## Installation
 Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/gebrie-dev/portfolio.git
-cd portfolio
+
+```javascript
+    git clone https://github.com/gebrie-dev/portfolio.git
+```
+```javascript
+    cd portfolio
+```
 Install the dependencies:
 Copy code
 npm install
@@ -36,11 +39,11 @@ Copy code
 npm start
 Open your browser and navigate to http://localhost:3000.
 
-Usage
+## Usage
 Navigate through the different sections using the navbar.
 Click on project links to view more details.
 Use the contact form to get in touch with me.
-Contributing
+## Contributing
 Contributions are welcome! If you have suggestions for improvements,
 feel free to fork the repository and create a pull request.
 
