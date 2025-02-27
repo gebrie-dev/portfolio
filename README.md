@@ -45,6 +45,7 @@ Use the contact form to get in touch with me.
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements,
 feel free to fork the repository and create a pull request.<br>
+## live application🈁
 [portfolio](gebrieportfolio.netlify.app)
 
 
