@@ -22,9 +22,10 @@ The website is built using modern web technologies and provides an overview of m
 ## 📥 Installation & Setup  
 
 ### 1️⃣ Clone the Repository  
-```bash
+```python
 git clone https://github.com/gebrie-dev/portfolio.git
 
+```
 ```javascript
     cd portfolio
 ```
