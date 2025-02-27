@@ -5,21 +5,19 @@ The website is built using modern web technologies and provides an overview of m
 ## Features
 **Home**: Introduction and overview of my profile.<br>
 **About**: Detailed information about me.<br>
-**Projects**: Showcase of my projects with descriptions and links.
-**Skills**: A list of my technical skills.
-**Testimonials**: Feedback from colleagues and clients.
-**Contact**: Form to get in touch with me.
-**Sign In**: Allows users to sign in for additional features.
-**Resume**: View and download my resume.
+**Projects**: Showcase of my projects with descriptions and links.<br>
+**Skills**: A list of my technical skills.<br>
+**Testimonials**: Feedback from colleagues and clients.<br>
+**Contact**: Form to get in touch with me.<br>
+**Sign In**: Allows users to sign in for additional features.<br>
+**Resume**: View and download my resume.<br>
 ## Technologies Used
-**React**: JavaScript library for building user interfaces.
-**Tailwind CSS**: Utility-first CSS framework for styling.
-Heroicons: Icons for the web.
-React Image Gallery: Component to display images in a gallery format.
-React Scroll: Smooth scrolling functionality.
-Getting Started
-Prerequisites
-Node.js and npm installed on your machine.
+**React**: JavaScript library for building user interfaces.<br>
+**Tailwind CSS**: Utility-first CSS framework for styling.<br>
+Heroicons: Icons for the web.<br>
+React Image Gallery: Component to display images in a gallery format.<br>
+React Scroll: Smooth scrolling functionality.<br>
+
 ## Installation
 Clone the repository:
 
