@@ -44,7 +44,7 @@ Click on project links to view more details.
 Use the contact form to get in touch with me.
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements,
-feel free to fork the repository and create a pull request.
-[live app](gebrieportfolio.netlify.app)
+feel free to fork the repository and create a pull request.<br>
+[portfolio](gebrieportfolio.netlify.app)
 
 
