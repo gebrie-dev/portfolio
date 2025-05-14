@@ -1,182 +1,206 @@
-import React, { useState, } from "react";
-import { DownloadIcon, SearchIcon, LightningBoltIcon, } from "@heroicons/react/solid";
+import React, { useState } from "react";
+import {
+  DownloadIcon,
+  SearchIcon,
+  LightningBoltIcon,
+  SunIcon,
+  MoonIcon,
+} from "@heroicons/react/solid";
 import { Link } from "react-scroll";
-import SignInForm from "./SignInForm"; // Import your sign-in form component
-import ImageGallery from 'react-image-gallery';
+import SignInForm from "./SignInForm";
+import ImageGallery from "react-image-gallery";
 import ResumePdf from "../assets/resume.png";
 
-const Navbar = () => {
+const Navbar = ({ toggleDarkMode, isDarkMode }) => {
   const [isResumeViewOpen, setIsResumeViewOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSignInOpen, setIsSignInOpen] = useState(false);
 
-  const handleResumeViewToggle = () => {
-    setIsResumeViewOpen((prevState) => !prevState);
-  };
-
-  const handleSetActiveSection = (section) => {
-    setActiveSection(section);
-  };
-
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSignInToggle = () => {
-    setIsSignInOpen((prevState) => !prevState);
-  };
-
-  const downloadResume = ResumePdf;
   const resumeImage = {
-    thumbnail: downloadResume,
-    description: 'Resume',
+    original: ResumePdf,
+    thumbnail: ResumePdf,
+    description: "Resume",
   };
 
   return (
-    <header className="bg-gradient-to-r from-pink-900 to-indigo-600 fixed w-full z-10 py-2">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <header
+      className={`fixed w-full z-50 py-3 shadow-lg transition-colors duration-300 ${
+        isDarkMode ? "bg-gray-800 text-gray-100" : "bg-white text-gray-900"
+      }`}
+    >
+      <div className="container mx-auto flex flex-wrap p-4 items-center justify-between">
+        {/* Logo */}
         <Link
           to="about"
           spy={true}
           smooth={true}
           duration={500}
-          className={`relative inline-flex items-center border-0 focus:outline-none hover:bg-gray-600 rounded-full p-2 ${activeSection === "about" ? "text-white" : "text-gray-300"} cursor-pointer`}
-          onClick={() => handleSetActiveSection("about")}
+          className="flex items-center space-x-2 cursor-pointer"
+          onClick={() => setActiveSection("about")}
         >
-        <img src="/favicon.ico" alt="Logo" className="h-12 w-12 rounded-full" />
-        </Link>
-        <span className="mx-2 h-6 md:h-16 text-gray-400 dark:text-pink-600 border-l border-gray-400 dark:border-gray-600 pl-2 ml-2"></span>
-        <Link
-          to="projects"
-          spy={true}
-          smooth={true}
-          duration={500}
-          className={`relative ml-4 text-pink-300 cursor-pointer ${activeSection === "projects" ? "text-white" : "hover:text-white"} transition duration-300`}
-          onClick={() => handleSetActiveSection("projects")}
-        >
-          Projects
-          {activeSection === "projects" && (<span className="absolute bottom-0 left-0 w-full h-1 bg-yellow-500" style={{ bottom: "-7px" }}></span>
-          )}
+          <img
+            src="/favicon.ico"
+            alt="Logo"
+            className="h-10 w-10 rounded-full"
+          />
+          <span className="font-bold text-xl">Gabby</span>
         </Link>
 
-        <Link
-          to="skills"
-          spy={true}
-          smooth={true}
-          duration={500}
-          className={`relative ml-4 text-pink-300 cursor-pointer ${activeSection === "skills" ? "text-white" : "hover:text-white"} transition duration-300`}
-          onClick={() => handleSetActiveSection("skills")}
-        >
-          Skills
-          {activeSection === "skills" && (<span className="absolute bottom-0 left-0 w-full h-1 bg-yellow-500 rounded-t-md" style={{ bottom: "-7px" }}></span>
-          )}
-        </Link>
+        {/* Nav Links */}
+        <nav className="hidden md:flex space-x-6 text-sm md:text-base">
+          {["projects", "skills", "testimonials", "contact"].map((section) => (
+            <Link
+              key={section}
+              to={section}
+              spy={true}
+              smooth={true}
+              duration={500}
+              className={`relative cursor-pointer transition duration-300 ${
+                activeSection === section
+                  ? isDarkMode
+                    ? "text-white"
+                    : "text-gray-900"
+                  : isDarkMode
+                  ? "text-gray-300 hover:text-white"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
+              onClick={() => setActiveSection(section)}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+              {activeSection === section && (
+                <span
+                  className={`absolute -bottom-2 left-0 w-full h-1 rounded-md ${
+                    isDarkMode ? "bg-blue-500" : "bg-blue-600"
+                  }`}
+                />
+              )}
+            </Link>
+          ))}
+        </nav>
 
-        <Link
-          to="testimonials"
-          spy={true}
-          smooth={true}
-          duration={500}
-          className={`relative ml-4 text-pink-300 cursor-pointer ${activeSection === "testimonials" ? "text-white" : "hover:text-white"} transition duration-300`}
-          onClick={() => handleSetActiveSection("testimonials")}
-        >
-          Feedback
-          {activeSection === "testimonials" && (<span className="absolute bottom-0 left-0 w-full h-1 bg-yellow-500 rounded-t-md" style={{ bottom: "-7px" }}></span>
-          )}
-        </Link>
+        {/* Right-side Actions */}
+        <div className="flex items-center space-x-4">
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className={`p-2 rounded-full transition-colors duration-300 ${
+              isDarkMode
+                ? "text-yellow-400 hover:bg-gray-700"
+                : "text-gray-600 hover:bg-gray-100"
+            }`}
+            aria-label="Toggle theme"
+          >
+            {isDarkMode ? (
+              <SunIcon className="w-6 h-6" />
+            ) : (
+              <MoonIcon className="w-6 h-6" />
+            )}
+          </button>
 
-        <div className="flex items-center ml-auto space-x-4">
+          {/* Hire Me Button */}
           <Link
             to="contact"
             spy={true}
             smooth={true}
             duration={500}
-            className={`inline-flex items-center border-b-4 border-transparent hover:border-blue-500 bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-600 rounded text-lg mt-4 md:mt-0 cursor-pointer ${activeSection === "contact" ? "text-white" : "text-gray-300"}`}
-            aria-label="Hire Me"
+            className={`inline-flex items-center px-4 py-2 rounded-full text-sm md:text-base transition-colors duration-300 ${
+              isDarkMode
+                ? "bg-blue-600 text-white hover:bg-blue-700"
+                : "bg-blue-600 text-white hover:bg-blue-700"
+            }`}
+            onClick={() => setActiveSection("contact")}
           >
             Hire Me
-            <LightningBoltIcon className="w-6 h-6 ml-2" />
+            <LightningBoltIcon className="ml-2 w-5 h-5" />
           </Link>
-          {/* Sign-in Icon */}
-          <button onClick={handleSignInToggle} className="flex items-center text-red-400 hover:text-white focus:outline-none ml-auto bg-transparent">
-            <svg class="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg><span className="text-base font-medium">Sign In</span>
-          </button>
 
-          {/* Sign-in Form Overlay */}
-          {isSignInOpen && (
-            <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <SignInForm />
-                <button onClick={handleSignInToggle} className="mt-4 text-red-400  focus:outline-none">Close</button>
-              </div>
-            </div>
-          )}
+          {/* CV Viewer */}
           <button
-            onClick={handleResumeViewToggle}
-            className="inline-flex items-center bg-blue-500 border-0 py-2 px-4 focus:outline-none hover:bg-gray-600 rounded text-lg mt-4 md:mt-0"
+            onClick={() => setIsResumeViewOpen((prev) => !prev)}
+            className={`flex items-center px-3 py-2 rounded transition-colors duration-300 ${
+              isDarkMode
+                ? "bg-gray-700 text-white hover:bg-gray-600"
+                : "bg-gray-100 text-gray-900 hover:bg-gray-200"
+            }`}
           >
             CV
-            <svg className="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-              <circle cx="7" cy="7" r="1.5" />
-              <polyline points="21 15 16 10 5 21" />
-            </svg>
+            <DownloadIcon className="ml-2 w-5 h-5" />
           </button>
 
-          
-
-          <div className="flex items-center ml-4 relative">
-            {isSearchOpen ? (
+          {/* Search Bar */}
+          <div className="relative">
+            {isSearchOpen && (
               <input
                 type="text"
-                placeholder="Search..."
                 value={searchQuery}
-                onChange={handleSearchChange}
-                className="bg-transparent border-b border-white focus:outline-none text-white"
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={`absolute right-8 px-2 py-1 w-32 rounded-md focus:outline-none transition-colors duration-300 ${
+                  isDarkMode
+                    ? "bg-gray-700 text-white border-gray-600"
+                    : "bg-white text-gray-900 border-gray-300"
+                }`}
+                placeholder="Search..."
               />
-            ) : null}
+            )}
             <SearchIcon
-              className="w-6 h-6 mr-2 text-white cursor-pointer"
-              onClick={() => setIsSearchOpen(!isSearchOpen)} // Toggle search input visibility
+              className={`w-6 h-6 cursor-pointer transition-colors duration-300 ${
+                isDarkMode
+                  ? "text-gray-300 hover:text-white"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
+              onClick={() => setIsSearchOpen((prev) => !prev)}
             />
           </div>
-
-          {isResumeViewOpen && (
-            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-50">
-              <div className="bg-white p-4 max-w-2xl max-h-screen overflow-y-auto">
-                <button
-                  onClick={handleResumeViewToggle}
-                  className="text-red-400  focus:outline-none mt-4"
-                >
-                  <svg class="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />  <line x1="9" y1="9" x2="15" y2="15" />  <line x1="15" y1="9" x2="9" y2="15" /></svg>
-                </button>
-                <ImageGallery items={[resumeImage]} />
-
-                <button
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = downloadResume;
-                    link.download = 'resume.png';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
-                  className="flex items-center bg-blue-500 border-0 py-2 px-4 focus:outline-none hover:bg-gray-600 rounded text-lg mt-4"
-                >
-                  <DownloadIcon className="w-5 h-5 mr-1" />
-                  Download
-                </button>
-
-              </div>
-
-            </div>
-          )}
         </div>
       </div>
+
+      {/* Resume Modal */}
+      {isResumeViewOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+          <div
+            className={`p-4 max-w-3xl w-full max-h-screen overflow-y-auto rounded-md shadow-xl ${
+              isDarkMode ? "bg-gray-800" : "bg-white"
+            }`}
+          >
+            <button
+              onClick={() => setIsResumeViewOpen(false)}
+              className="text-red-500 float-right hover:text-red-600 transition-colors duration-300"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <line x1="6" y1="6" x2="18" y2="18" />
+                <line x1="6" y1="18" x2="18" y2="6" />
+              </svg>
+            </button>
+            <ImageGallery items={[resumeImage]} />
+
+            <button
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = ResumePdf;
+                link.download = "resume.png";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className={`mt-4 flex items-center px-4 py-2 rounded transition-colors duration-300 ${
+                isDarkMode
+                  ? "bg-blue-600 text-white hover:bg-blue-700"
+                  : "bg-blue-600 text-white hover:bg-blue-700"
+              }`}
+            >
+              <DownloadIcon className="w-5 h-5 mr-2" />
+              Download Resume
+            </button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
