@@ -1,69 +1,116 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-export default function About() {
+export default function About({ isDarkMode }) {
   return (
-    <section id="about" className="text-gray-400 bg-gray-900 body-font">
-      <div className="container mx-auto flex px-10 py-20 md:flex-row flex-col items-center">
-        <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium bg-gradient-to-br from-rose-600 to-indigo-600 bg-clip-text text-transparent">
-            Hi, I'm Gebre.
-            <br className="hidden lg:inline-block" />I love to build amazing
-            apps with React.
-          </h1>
-
-          <p className="mb-8 leading-relaxed">
-            As a dedicated software engineer, I enjoy tackling challenges and
-            building robust, scalable applications. My passion for coding goes
-            beyond just writing functions—it's about crafting clean, efficient,
-            and impactful solutions. I believe in lifelong learning and staying
-            updated with the latest technologies to deliver top-tier results.
-            Let's collaborate and bring your next idea to life.
-          </p>
-
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold text-white mb-1">Education</h2>
-            <p className="text-gray-400">
-              Currently enrolled in a Software Engineering program.
-            </p>
+    <section
+      id="about"
+      className={`relative overflow-hidden transition-colors duration-300 ${
+        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-50 text-gray-900"
+      }`}
+    >
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600"></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        ></div>
           </div>
 
-          <div className="flex justify-center">
+      <div className="container mx-auto px-6 py-20 relative">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <div className="space-y-6">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-4xl md:text-5xl font-bold leading-tight"
+              >
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  Hi, I'm Gebre.
+                </span>
+                <br />
+                <span className={isDarkMode ? "text-white" : "text-gray-900"}>
+                  I love to build amazing apps with React.
+                </span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className={`text-lg leading-relaxed ${
+                  isDarkMode ? "text-gray-300" : "text-gray-600"
+                }`}
+              >
+                As a dedicated software engineer, I enjoy tackling challenges
+                and building robust, scalable applications. My passion for
+                coding goes beyond just writing functions—it's about crafting
+                clean, efficient, and impactful solutions.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex flex-wrap gap-4"
+              >
             <a
               href="#contact"
-              className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"
+                  className="inline-flex items-center px-6 py-3 rounded-full text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/20"
             >
               Work With Me
             </a>
             <a
               href="#projects"
-              className="ml-4 inline-flex items-center text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
+                  className={`inline-flex items-center px-6 py-3 rounded-full transition-all duration-300 ${
+                    isDarkMode
+                      ? "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white hover:shadow-lg hover:shadow-gray-800/20"
+                      : "bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900 hover:shadow-lg hover:shadow-gray-200/20"
+                  }`}
             >
               <svg
-                className="h-6 w-6 mr-2 text-red-500"
-                width="24"
-                height="24"
+                    className="w-5 h-5 mr-2 text-blue-500"
+                    fill="none"
+                    stroke="currentColor"
                 viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                fill="none"
+                  >
+                    <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" />
-                <polyline points="12 8 12 12 14 14" />
-                <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" />
+                      strokeWidth={2}
+                      d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                    />
               </svg>
-              Past Work
+                  View Projects
             </a>
-          </div>
+              </motion.div>
+            </div>
         </div>
 
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <img
-            className="object-cover object-center rounded"
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="md:w-1/2"
+          >
+            <div className="relative">
+              <div
+                className={`absolute inset-0 rounded-2xl transform rotate-3 ${
+                  isDarkMode ? "bg-blue-600" : "bg-blue-500"
+                } opacity-20`}
+              ></div>
+              <img
+                className="relative rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
             alt="Developer working on MERN stack"
             src="./mern_stack.svg"
           />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
