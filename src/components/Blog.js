@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CalendarIcon, ClockIcon, TagIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { CodeIcon, ExternalLinkIcon } from "@heroicons/react/solid";
-
 const Blog = ({ isDarkMode }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);

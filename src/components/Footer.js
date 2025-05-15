@@ -5,8 +5,6 @@ import {
   faGithub,
   faFacebook,
   faInstagram,
-  faLinkedin,
-  faWhatsapp,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -60,7 +58,7 @@ const Footer = ({ isDarkMode }) => {
                 <FontAwesomeIcon icon={faGithub} className="text-xl" />
               </a>
               <a
-                href="gebrie-devhttps://github.com/gebrie-dev/gebrie-dev"
+                href="https://github.com/gebrie-dev/gebrie-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/20"
@@ -99,7 +97,7 @@ const Footer = ({ isDarkMode }) => {
               {["MongoDB", "Tailwind CSS", "VS Code", "Node.js"].map((tech) => (
                 <li key={tech}>
                   <a
-                    href="#"
+                    href="mern.com"
                     className={`transition-colors duration-300 ${
                       isDarkMode
                         ? "text-gray-300 hover:text-blue-400"

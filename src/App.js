@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   BrowserRouter as Router,
@@ -11,7 +11,6 @@ import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer.js";
 import Blog from "./components/Blog";
 import BlogPost from "./components/BlogPost";
