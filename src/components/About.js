@@ -31,7 +31,7 @@ export default function About({ isDarkMode }) {
                 className="text-4xl md:text-5xl font-bold leading-tight"
               >
                 <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  Hi, I'm Gebre.
+                  Hi, I'm Gebrie.
                 </span>
                 <br />
                 <span className={isDarkMode ? "text-white" : "text-gray-900"}>
