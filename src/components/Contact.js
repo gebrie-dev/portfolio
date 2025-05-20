@@ -60,20 +60,20 @@ const Contact = ({ isDarkMode }) => {
     {
       icon: MailIcon,
       title: "Email",
-      content: "contact@yourdomain.com",
+      content: "contact@gmail.com",
       link: "mailto:contact@yourdomain.com",
     },
     {
       icon: PhoneIcon,
       title: "Phone",
-      content: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      content: "+251914080045",
+      link: "tel:+251914080045",
     },
     {
       icon: LocationMarkerIcon,
       title: "Location",
-      content: "San Francisco, CA",
-      link: "https://maps.google.com",
+      content: "Addis  Ababa",
+      link: "https://www.google.com/maps/search/sarbet+location/@8.9944474,38.7177083,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDUxNS4wIKXMDSoASAFQAw%3D%3D",
     },
   ];
 
