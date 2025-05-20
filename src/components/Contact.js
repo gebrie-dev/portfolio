@@ -60,7 +60,7 @@ const Contact = ({ isDarkMode }) => {
     {
       icon: MailIcon,
       title: "Email",
-      content: "contact@gmail.com",
+      content: "gabiwagnew@gmail.com",
       link: "mailto:contact@yourdomain.com",
     },
     {
