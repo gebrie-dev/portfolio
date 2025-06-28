@@ -60,19 +60,19 @@ const Contact = ({ isDarkMode }) => {
     {
       icon: MailIcon,
       title: "Email",
-      content: "contact@yourdomain.com",
+      content: "gabiwagnew@gmail.com",
       link: "mailto:contact@yourdomain.com",
     },
     {
       icon: PhoneIcon,
       title: "Phone",
-      content: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      content: "+251914080045",
+      link: "tel:+251914080045",
     },
     {
       icon: LocationMarkerIcon,
       title: "Location",
-      content: "San Francisco, CA",
+      content: "Addis Ababa, Ethiopia",
       link: "https://maps.google.com",
     },
   ];
@@ -212,11 +212,11 @@ const Contact = ({ isDarkMode }) => {
                     }`}
                   >
                     Your Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
@@ -231,7 +231,7 @@ const Contact = ({ isDarkMode }) => {
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-500">{errors.name}</p>
                   )}
-          </div>
+                </div>
                 <div>
                   <label
                     htmlFor="email"
@@ -240,11 +240,11 @@ const Contact = ({ isDarkMode }) => {
                     }`}
                   >
                     Your Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
@@ -289,7 +289,7 @@ const Contact = ({ isDarkMode }) => {
                 {errors.subject && (
                   <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
                 )}
-          </div>
+              </div>
 
               <div>
                 <label
@@ -299,10 +299,10 @@ const Contact = ({ isDarkMode }) => {
                   }`}
                 >
                   Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows="6"
@@ -318,11 +318,11 @@ const Contact = ({ isDarkMode }) => {
                 {errors.message && (
                   <p className="mt-1 text-sm text-red-500">{errors.message}</p>
                 )}
-          </div>
+              </div>
 
               <div className="flex justify-end">
-  <button
-    type="submit"
+                <button
+                  type="submit"
                   disabled={isSubmitting}
                   className={`inline-flex items-center px-8 py-3 rounded-full text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/20 ${
                     isSubmitting ? "opacity-75 cursor-not-allowed" : ""
@@ -332,16 +332,16 @@ const Contact = ({ isDarkMode }) => {
                     <>
                       <svg
                         className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
                       >
                         <circle
                           className="opacity-25"
                           cx="12"
                           cy="12"
                           r="10"
-          stroke="currentColor"
+                          stroke="currentColor"
                           strokeWidth="4"
                         ></circle>
                         <path
@@ -349,13 +349,13 @@ const Contact = ({ isDarkMode }) => {
                           fill="currentColor"
                           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                         ></path>
-        </svg>
+                      </svg>
                       Sending...
-      </>
-    ) : (
+                    </>
+                  ) : (
                     "Send Message"
-    )}
-  </button>
+                  )}
+                </button>
               </div>
             </form>
           )}

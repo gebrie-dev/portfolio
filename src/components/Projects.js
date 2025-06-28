@@ -23,12 +23,11 @@ const Projects = ({ isDarkMode }) => {
     {
       id: 2,
       title: "CulerHub Platform",
-      description:
-        "A collaborative hub for developers to share projects, resources, and connect. Includes authentication and real-time features.",
+      description:"CulerHub is a  SaaS platform for FC Barcelona fans featuring exclusive Barça store assets, real-time match analytics, and interactive community challenges.",
       image: "/images/culer-hub.png",
       technologies: ["Next js", "typscript", "Tailwind CSS"],
       github: "https://github.com/gebrie-dev/culerhub-platform",
-      live: "https://your-live-demo.com/culerhub-platform",
+      live: "https://culerhub.netlify.app/",
       category: "fullstack",
       featured: true,
     },
@@ -40,7 +39,7 @@ const Projects = ({ isDarkMode }) => {
       image: "/images/project-1.gif",
       technologies: ["React", "API Integration"],
       github: "https://github.com/gebrie-dev/currency-converter",
-      live: "https://your-live-demo.com/currency-converter",
+      live: "https://culerhub.netlify.app/",
       category: "frontend",
       featured: true,
     },
