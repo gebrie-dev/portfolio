@@ -10,54 +10,50 @@ const Projects = ({ isDarkMode }) => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Ethio Language Learning Platform",
       description:
-        "A full-stack e-commerce platform built with MERN stack, featuring real-time inventory management and secure payment processing.",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com/yourusername/project1",
-      live: "https://project1.com",
-      category: "fullstack",
-      featured: true,
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates and team collaboration features.",
-      image:
-        "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      technologies: ["React", "Firebase", "Tailwind CSS"],
-      github: "https://github.com/yourusername/project2",
-      live: "https://project2.com",
+        "A web platform for learning Ethiopian languages interactively. Features lessons, quizzes, and progress tracking.",
+      image: "/images/ethio-language-learning-platform.png",
+      technologies: ["React", "Vite"],
+      github: "https://github.com/gebrie-dev/Ethio_language_Learning",
+      live: "https://your-live-demo.com/ethio-language-learning-platform",
       category: "frontend",
       featured: true,
     },
     {
-      id: 3,
-      title: "Portfolio Website",
+      id: 2,
+      title: "CulerHub Platform",
       description:
-        "A modern portfolio website showcasing projects and skills with smooth animations and responsive design.",
-      image:
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/yourusername/project3",
-      live: "https://project3.com",
+        "A collaborative hub for developers to share projects, resources, and connect. Includes authentication and real-time features.",
+      image: "/images/culer-hub.png",
+      technologies: ["Next js", "typscript", "Tailwind CSS"],
+      github: "https://github.com/gebrie-dev/culerhub-platform",
+      live: "https://your-live-demo.com/culerhub-platform",
+      category: "fullstack",
+      featured: true,
+    },
+    {
+      id: 3,
+      title: "Currency Converter",
+      description:
+        "Real-time currency conversion app using live exchange rates. Built with React and API integration.",
+      image: "/images/project-1.gif",
+      technologies: ["React", "API Integration"],
+      github: "https://github.com/gebrie-dev/currency-converter",
+      live: "https://your-live-demo.com/currency-converter",
       category: "frontend",
       featured: true,
     },
     {
       id: 4,
-      title: "REST API Service",
+      title: "EthioMarket",
       description:
-        "A scalable REST API service with authentication, rate limiting, and comprehensive documentation.",
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      technologies: ["Node.js", "Express", "PostgreSQL", "Docker"],
-      github: "https://github.com/yourusername/project4",
-      live: "https://project4.com",
-      category: "backend",
+        "A full-stack e-commerce platform for Ethiopian products. Features inventory management, secure payments, and user accounts.",
+      image: "/images/EthioMarket.png",
+      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      github: "https://github.com/gebrie-dev/Ethiomarket",
+      live: "https://your-live-demo.com/ethiomarket",
+      category: "fullstack",
       featured: true,
     },
   ];

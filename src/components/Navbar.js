@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
 import { SunIcon, MoonIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Navbar = ({ isDarkMode, toggleDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,7 +64,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
                   isDarkMode ? "text-white" : "text-gray-900"
                 }`}
               >
-                Gavi
+                gebre
               </span>
             </Link>
           </motion.div>
@@ -116,6 +117,34 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
                 )}
               </Link>
             ))}
+            {/* Resume Button */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 px-5 py-2 rounded-full font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 shadow-lg shadow-blue-600/20"
+            >
+              Download Resume
+            </a>
+            {/* Social Links */}
+            <a
+              href="https://www.linkedin.com/in/your-linkedin-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 text-blue-700 hover:text-blue-900 text-2xl"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://github.com/your-github-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 text-gray-800 hover:text-black text-2xl"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
           </nav>
 
           {/* Theme Toggle */}
@@ -209,6 +238,36 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
                     {link.label}
                   </Link>
                 ))}
+                {/* Resume Button */}
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 px-5 py-2 rounded-full font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 shadow-lg shadow-blue-600/20 text-center"
+                >
+                  Download Resume
+                </a>
+                {/* Social Links */}
+                <div className="flex justify-center mt-2 space-x-4">
+                  <a
+                    href="https://www.linkedin.com/in/your-linkedin-profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-700 hover:text-blue-900 text-2xl"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin />
+                  </a>
+                  <a
+                    href="https://github.com/gebrie-dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-800 hover:text-black text-2xl"
+                    aria-label="GitHub"
+                  >
+                    <FaGithub />
+                  </a>
+                </div>
               </nav>
             </div>
           </motion.div>
