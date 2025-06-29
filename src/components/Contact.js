@@ -226,7 +226,7 @@ const Contact = ({ isDarkMode }) => {
                         ? "border-gray-700 bg-gray-700 text-white"
                         : "border-gray-300 bg-white text-gray-900"
                     } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                    placeholder="John Doe"
+                    placeholder="abebe Alem"
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-500">{errors.name}</p>
@@ -254,7 +254,7 @@ const Contact = ({ isDarkMode }) => {
                         ? "border-gray-700 bg-gray-700 text-white"
                         : "border-gray-300 bg-white text-gray-900"
                     } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                    placeholder="john@example.com"
+                    placeholder="abebe@gmail.com"
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-500">{errors.email}</p>

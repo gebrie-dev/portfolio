@@ -7,7 +7,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 const Navbar = ({ isDarkMode, toggleDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("about"); // Changed default to "about" since "home" is removed
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +18,10 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
   }, []);
 
   const navLinks = [
-    { id: "home", label: "Home", number: "01" },
-    { id: "about", label: "About", number: "02" },
-    { id: "skills", label: "Skills", number: "03" },
-    { id: "projects", label: "Projects", number: "04" },
-    { id: "contact", label: "Contact", number: "05" },
+    { id: "about", label: "About", number: "01" },
+    { id: "skills", label: "Skills", number: "02" },
+    { id: "projects", label: "Projects", number: "03" },
+    { id: "contact", label: "Contact", number: "04" },
   ];
 
   return (
@@ -54,12 +53,13 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
               duration={500}
               className="flex items-center space-x-2 cursor-pointer"
             >
-              <img
-                src="/favicon.ico"
-                alt="Logo"
-                className="h-12 w-12 rounded-full transition-transform duration-300 hover:scale-110"
+              <motion.img
+                src="/gebre-logo.svg"
+                alt="GW Logo"
+                className="h-16 w-16 rounded-full"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ duration: 0.3 }}
               />
-              
             </Link>
           </motion.div>
 
@@ -118,7 +118,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
               rel="noopener noreferrer"
               className="ml-4 px-5 py-2 rounded-full font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 shadow-lg shadow-blue-600/20"
             >
-               Resume
+              Resume
             </a>
 
             <a
@@ -204,6 +204,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
                         ? isDarkMode
                           ? "text-white"
                           : "text-gray-900"
+
                         : isDarkMode
                         ? "text-gray-300"
                         : "text-gray-600"

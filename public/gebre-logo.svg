@@ -1,0 +1,12 @@
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Rectangle -->
+  <rect x="2" y="2" width="116" height="56" rx="8" fill="none" stroke="#2563EB" stroke-width="2"/>
+  
+  <!-- 'GW' Text -->
+  <text x="20" y="40" font-family="Montserrat, sans-serif" font-size="36" font-weight="bold" fill="#2563EB">
+    GW
+  </text>
+  
+  <!-- Accent Line -->
+  <line x1="20" y1="45" x2="100" y2="45" stroke="#2563EB" stroke-width="2"/>
+</svg>

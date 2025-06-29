@@ -169,7 +169,7 @@ const Footer = ({ isDarkMode }) => {
               : "border-gray-200 text-gray-600"
           }`}
         >
-          <p>© 2024 Gabby. All rights reserved.</p>
+          <p>© 2024 Gebre. All rights reserved.</p>
         </div>
       </div>
     </footer>
