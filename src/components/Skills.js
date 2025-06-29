@@ -36,7 +36,6 @@ const Skills = ({ isDarkMode }) => {
           level: 85,
           color: "from-purple-500 to-purple-600",
         },
-        { name: "GraphQL", level: 70, color: "from-pink-500 to-pink-600" },
         { name: "PostgreSQL", level: 75, color: "from-blue-400 to-blue-500" },
       ],
     },
@@ -46,7 +45,6 @@ const Skills = ({ isDarkMode }) => {
       skills: [
         { name: "Git", level: 85, color: "from-red-500 to-red-600" },
         { name: "Docker", level: 70, color: "from-blue-400 to-blue-500" },
-        { name: "AWS", level: 65, color: "from-yellow-500 to-yellow-600" },
         { name: "CI/CD", level: 75, color: "from-indigo-500 to-indigo-600" },
         { name: "Jest", level: 80, color: "from-green-400 to-green-500" },
         { name: "Webpack", level: 75, color: "from-blue-400 to-blue-500" },
@@ -123,7 +121,7 @@ const Skills = ({ isDarkMode }) => {
                 {category.category}
               </motion.button>
             ))}
-        </div>
+          </div>
         </motion.div>
 
         <AnimatePresence mode="wait">
@@ -169,8 +167,8 @@ const Skills = ({ isDarkMode }) => {
                           }`}
                         >
                           {skill.level}%
-                </span>
-              </div>
+                        </span>
+                      </div>
                       <div
                         className={`h-2 rounded-full overflow-hidden ${
                           isDarkMode ? "bg-gray-700" : "bg-gray-200"
@@ -186,9 +184,9 @@ const Skills = ({ isDarkMode }) => {
                           className={`h-full rounded-full bg-gradient-to-r ${skill.color}`}
                         />
                       </div>
-            </div>
-          ))}
-        </div>
+                    </div>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </motion.div>
