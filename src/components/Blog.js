@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CalendarIcon, ClockIcon, TagIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
 const Blog = ({ isDarkMode }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeFilter, setActiveFilter] = useState("all");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const filters = [
     { id: "all", label: "All Posts" },
@@ -26,7 +28,7 @@ const Blog = ({ isDarkMode }) => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:5000/api/blog");
+        const response = await axios.get(`${apiUrl}/api/blog`);
         setPosts(response.data);
         setError(null);
       } catch (err) {
@@ -38,7 +40,7 @@ const Blog = ({ isDarkMode }) => {
     };
 
     fetchPosts();
-  }, []);
+  }, [apiUrl]);
 
   const filteredPosts =
     activeFilter === "all"

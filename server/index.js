@@ -13,8 +13,8 @@ const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
       ? [
-          "https://your-netlify-app.netlify.app",
-          "https://your-custom-domain.com",
+          "https://gebrie.netlify.app",
+          "https://portfolio-1-uiw2.onrender.com/",
         ]
       : ["http://localhost:3000"],
   credentials: true,

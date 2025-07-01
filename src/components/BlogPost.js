@@ -16,24 +16,24 @@ const BlogPost = ({ isDarkMode }) => {
   const [error, setError] = useState(null);
   const { slug } = useParams();
   const navigate = useNavigate();
-
+  const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
     const fetchPost = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:5000/api/blog/${slug}`);
+        const response = await axios.get(`${apiUrl}/api/blog/${slug}`);
         setPost(response.data);
-        setError(null);
+        setError("Failed to fetch blog post. Please try again later.");
       } catch (err) {
-        setError('Failed to fetch blog post. Please try again later.');
-        console.error('Error fetching post:', err);
+        setError("Failed to fetch blog post. Please try again later.");
+        console.error("Error fetching post:", err);
       } finally {
         setLoading(false);
       }
     };
 
     fetchPost();
-  }, [slug]);
+  }, [slug, apiUrl]);
 
   if (loading) {
     return (
@@ -48,8 +48,8 @@ const BlogPost = ({ isDarkMode }) => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-red-500 text-center">
           <p className="text-xl font-semibold">{error}</p>
-          <button 
-            onClick={() => navigate('/blog')}
+          <button
+            onClick={() => navigate("/blog")}
             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
           >
             Back to Blog
@@ -66,8 +66,8 @@ const BlogPost = ({ isDarkMode }) => {
           <p className="text-xl font-semibold text-gray-600 dark:text-gray-300">
             Post not found
           </p>
-          <button 
-            onClick={() => navigate('/blog')}
+          <button
+            onClick={() => navigate("/blog")}
             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
           >
             Back to Blog
@@ -93,18 +93,24 @@ const BlogPost = ({ isDarkMode }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              {post.title}
+            </h1>
 
             <div className="flex flex-wrap items-center gap-6 mb-8">
               <div className="flex items-center">
                 <UserIcon className="w-5 h-5 mr-2 text-gray-500" />
-                <span className={isDarkMode ? "text-gray-300" : "text-gray-600"}>
+                <span
+                  className={isDarkMode ? "text-gray-300" : "text-gray-600"}
+                >
                   {post.author.name}
                 </span>
               </div>
               <div className="flex items-center">
                 <CalendarIcon className="w-5 h-5 mr-2 text-gray-500" />
-                <span className={isDarkMode ? "text-gray-300" : "text-gray-600"}>
+                <span
+                  className={isDarkMode ? "text-gray-300" : "text-gray-600"}
+                >
                   {new Date(post.createdAt).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
@@ -114,7 +120,9 @@ const BlogPost = ({ isDarkMode }) => {
               </div>
               <div className="flex items-center">
                 <ClockIcon className="w-5 h-5 mr-2 text-gray-500" />
-                <span className={isDarkMode ? "text-gray-300" : "text-gray-600"}>
+                <span
+                  className={isDarkMode ? "text-gray-300" : "text-gray-600"}
+                >
                   {post.readTime}
                 </span>
               </div>
