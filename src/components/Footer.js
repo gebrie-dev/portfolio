@@ -97,7 +97,7 @@ const Footer = ({ isDarkMode }) => {
               {["MongoDB", "Tailwind CSS", "VS Code", "Node.js"].map((tech) => (
                 <li key={tech}>
                   <a
-                    href="mern.com"
+                    href="mernstack.com"
                     className={`transition-colors duration-300 ${
                       isDarkMode
                         ? "text-gray-300 hover:text-blue-400"
