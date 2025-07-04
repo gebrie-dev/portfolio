@@ -12,10 +12,7 @@ const app = express();
 const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
-      ? [
-          "https://gebrie.netlify.app",
-          "https://portfolio-1-uiw2.onrender.com/",
-        ]
+      ? ["https://gebrie.netlify.app", "https://portfolio-1-uiw2.onrender.com/"]
       : ["http://localhost:3000"],
   credentials: true,
   optionsSuccessStatus: 200,
@@ -57,6 +54,11 @@ app.use("*", (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
+if (process.env.PORT) {
+  console.log(`Using custom port from environment: ${process.env.PORT}`);
+} else {
+  console.warn("No PORT environment variable set. Using default port 5000.");
+}
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || "development"}`);

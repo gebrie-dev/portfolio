@@ -110,7 +110,7 @@ const Footer = ({ isDarkMode }) => {
               ))}
             </ul>
           </div>
-
+        <VisitorCounter />
           {/* Contact */}
           <div>
             <h3
